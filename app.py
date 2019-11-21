@@ -9,7 +9,7 @@ from heapq import nlargest
 
 f = open('texto1.txt', 'r')
 f2 = open('texto2.txt', 'r')
-pagina = f = open('texto1.txt', 'r').read()
+texto = f = open('texto1.txt', 'r').read()
 
 sentencas = sent_tokenize(f)
 palavras = word_tokenize(f.lower())
@@ -20,14 +20,25 @@ palavras_sem_stopwords = [palavra for palavra in palavras if palavra not in stop
 
 frequencia = FreqDist(palavras_sem_stopwords)
 
+
+
 sentencas_importantes = defaultdict(int)
+vet = []
 
 for i, sentenca in enumerate(sentencas):
     for palavra in word_tokenize(sentenca.lower()):
         if palavra in frequencia:
             sentencas_importantes[i] += frequencia[palavra]
 
+    vet.append(frequencia)
+
+
 idx_sentencas_importantes = nlargest(4, sentencas_importantes, sentencas_importantes.get)
+
+
+
 
 for i in sorted(idx_sentencas_importantes):
     print(sentencas[i])
+
+print(vet)
