@@ -38,29 +38,77 @@ vet_final = palavras_sem_stopwords + palavras_sem_stopwords2
 vet_final = list(dict.fromkeys(vet_final))
 x = 0
 aux = 0
-for i in vet_final:
-    for j in palavras_sem_stopwords:
-        if i == j:
-            aux +=1
-            vet1.append(aux)
-        else:
-            vet1.append(0)
-        aux = 0
-
-for i in vet_final:
-    if i in palavras_sem_stopwords2:
-        vet2.append(1)
-    else:
-        vet2.append(0)
-frequencia = FreqDist(palavras_sem_stopwords)
-
-# print(vet_final)
+#
+# for i in vet_final:
+#         if i in palavras_sem_stopwords:
+#             aux+=1
+#             vet1.append(aux)
+#         else:
+#             aux2 = 0
+#             vet1.append(aux)
+#
+#         aux = 0
+#
+# for i in vet_final:
+#     if i in palavras_sem_stopwords2:
+#         vet2.append(1)
+#     else:
+#         vet2.append(0)
+# frequencia = FreqDist(palavras_sem_stopwords)
+# i = 0
+# while i < len(vet_final):
+#     for j in len(vet_final):
+#         if j in palavras_sem_stopwords:
+#             aux+=1
+#     vet1.append(aux)
+#     aux = 0
+#     i+=1
+# texts = [vet_final,palavras_sem_stopwords]
+# vet1 = collections.Counter(word for words in texts for word in words)
+texts = [vet_final, palavras_sem_stopwords]
+count = 0
+# for text in texts:
+#     # print(Counter(text).values())
+#     count =1
+#     if count > 0:
+#         vet1=(Counter(text).values())
+# for i in vet1:
+#     if vet1[i]<
+#
+# texts = [vet_final,palavras_sem_stopwords2]
+# for text in texts:
+#     print(Counter(text))
+#     count =1
+#     if count > 0:
+#         vet2=(Counter(text).values())
+# # print(vet_final)
 # print(palavras_sem_stopwords)
 # print(vet1)
 #
-# print(vet_final)
-# print(palavras_sem_stopwords2)
-# print(vet2)
+contador = []
+for i in range(0, len(vet_final), 1):
+    aux1 = vet_final[i]
+    for j in range(0, len(palavras_sem_stopwords), 1):
+        aux2 = palavras_sem_stopwords[j]
+        if aux1 == aux2:
+            contador.append(1)
+    vet1.append(sum(contador))
+    contador = []
 
-print('-----------')
+contador = []
+for i in range(0, len(vet_final), 1):
+    aux1 = vet_final[i]
+    for j in range(0, len(palavras_sem_stopwords2), 1):
+        aux2 = palavras_sem_stopwords2[j]
+        if aux1 == aux2:
+            contador.append(1)
+    vet2.append(sum(contador))
+    contador = []
+
+print(vet_final)
+print(palavras_sem_stopwords)
 print(vet1)
+
+print(vet_final)
+print(palavras_sem_stopwords2)
+print(vet2)
