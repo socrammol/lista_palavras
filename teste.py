@@ -84,9 +84,6 @@ print(vetores_palavras[0])
 print(vetores_palavras[1])
 print(vetores_palavras[2])
 
-
-
-
 print(vet_2andic)
 print(vet_2anpala)
 
