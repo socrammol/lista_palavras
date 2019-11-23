@@ -17,6 +17,7 @@
 - request
 - redirect
 - render_template
+- jinja2
 
 #### Para Rodar local, sera necessario instalar as bibliotecas e pacotes citados acima
 #### apos isto sera necessario rodar o arquivo main.py
