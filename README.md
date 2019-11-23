@@ -13,7 +13,7 @@
 ### Utilizado o stopwords para retirar letras como e,o,ou virgulas e pontos finais 
 
 ### Ja para o FLASK foi utilizado os pacotes
-- flash
+- flask
 - request
 - redirect
 - render_template
