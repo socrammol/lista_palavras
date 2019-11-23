@@ -1,12 +1,11 @@
-import os
-# import magic
-import urllib.request
+from tempfile import template
 
 import readarchive
 from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 vet_file = []
+
 ALLOWED_EXTENSIONS = set(['txt', 'doc'])
 
 
@@ -21,8 +20,11 @@ def upload_form():
 
 @app.route('/', methods=['POST'])
 def upload_file():
+    data = []
+    resp = []
     if request.method == 'POST':
         # check if the post request has the files part
+
         if 'files[]' not in request.files:
             flash('No file part')
             return redirect(request.url)
@@ -30,9 +32,19 @@ def upload_file():
         for file in files:
             if file and allowed_file(file.filename):
                 vet_file.append(file.filename)
-        readarchive.inicia(vet_file)
         flash('File(s) successfully uploaded')
-        return redirect('/')
+        op = (request.form['op'])
+        data.append(readarchive.inicia(vet_file, op))
+        if len(data) > 0:
+            if op == "1":
+                 resp = ('o vocabulario completo referente aos textos enviados e:  ', data)
+            if op == "2":
+                resp = ('o vocabulario (2-gram) completo referente aos textos enviados e: ', data)
+            if op == "3":
+                resp = ('os vetores de todos os textos enviados e: ', data)
+            if op == "4":
+                resp = ('os vetores de todos os textos enviados e: ', data)
+        return render_template('upload.html', resp=resp)
 
 
 if __name__ == "__main__":

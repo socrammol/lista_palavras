@@ -1,0 +1,22 @@
+<p>&lt;!doctype html&gt;</p>
+<h2>Selecione os arquivos para upload</h2>
+<p>{% with messages = get_flashed_messages() %} {% if messages %}</p>
+<ul class="flashes">{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}</ul>
+<p>{% endif %} {% endwith %}</p>
+<form action="/" enctype="multipart/form-data" method="post">
+<p><input autocomplete="off" multiple="multiple" name="files[]" required="" type="file" /></p>
+<select id="op" name="op">
+<option value="0"></option>
+<option value="1">O vocabul&aacute;rio completo formado pelas palavras isoladas</option>
+<option value="2">O vocabul&aacute;rio completo formado por grupos de 2 palavras em sequ&ecirc;ncia (2-gram)</option>
+<option value="3">Os N vetores de palavras de todos os documentos, considerando o vocabul&aacute;rio formado pelas palavras isoladas</option>
+<option value="4">Os N vetores de palavras de todos os documentos, considerando o vocabul&aacute;rio formado por grupos de 2 palavras em sequ&ecirc;ncia (2-gram)</option>
+</select>
+<p><input type="submit" value="Submit" /></p>
+</form>
+<ul>
+<li>{{resp}}</li>
+</ul>
+
