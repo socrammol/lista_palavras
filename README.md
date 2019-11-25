@@ -22,7 +22,7 @@
 #### Funcionalidades
 
 ### Carregando a aplicação 
-Apos a instalação das bibliotecas e pacotes citados acima,
+Apos a instalação das bibliotecas e pacotes citados acima (pode-se instalar pelo requeriments.txt, mas se preferir pode se fazer a instalação manual),
 executar o arquivo main.py, apos isto, sera apresentado no terminal do python o endereço a qual se deve acessar pelo navegador, e recomendado executar a aplicação dentro de uma env ou dentro do conda.
 
 ### Carga de dados na aplicação
