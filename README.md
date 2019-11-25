@@ -23,3 +23,5 @@
 
 ### Carga de dados na aplicação
 Ao abrir o link gerado pelo terminal da aplicação  seleciona e opção de incluir arquivo, selecione os arquivos de texto desejados , apos isso selecione a resposta desejada e click em submit.
+### Resposta
+A mesma sera apresentada na tela abaixo do botão submit
