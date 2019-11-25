@@ -19,13 +19,13 @@
 - render_template
 - jinja2
 
-#### Funcionalidades
+### Funcionalidades
 
-### Carregando a aplicação 
+#### Carregando a aplicação 
 Apos a instalação das bibliotecas e pacotes citados acima (pode-se instalar pelo requeriments.txt, mas se preferir pode se fazer a instalação manual),
 executar o arquivo main.py, apos isto, sera apresentado no terminal do python o endereço a qual se deve acessar pelo navegador, e recomendado executar a aplicação dentro de uma env ou dentro do conda.
 
-### Carga de dados na aplicação
+#### Carga de dados na aplicação
 Ao abrir o link gerado pelo terminal da aplicação  seleciona e opção de incluir arquivo, selecione os arquivos de texto desejados , apos isso selecione a resposta desejada e click em submit.
-### Resposta
+#### Resposta
 A mesma sera apresentada na tela abaixo do botão submit
