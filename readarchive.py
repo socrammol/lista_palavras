@@ -2,10 +2,17 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from string import punctuation
 from nltk.util import ngrams
+from flask import Flask, flash, request, redirect, render_template
+from app import app
 
 stopwords = set(stopwords.words('portuguese') + list(punctuation))
 
-def inicia(caminho):
+@app.route('/visualizar', methods=['POST'])
+def visulizar_dados():
+    return render_template('dados.html')
+
+def inicia(caminho , op):
+    opcao= op
     # vetores
     dicionario = []
     vetores_palavras = []
@@ -57,15 +64,15 @@ def inicia(caminho):
     vet_2andic = list(extract_ngrams(dicionario, 2))
     vet_2andic = list(dict.fromkeys(vet_2andic))
     dicionario = list(dict.fromkeys(dicionario))
-
-    print(dicionario)
-    print (vet_2andic)
     vetor_freq = verifica_frequencia(vetores_palavras,dicionario)
     vetor_freq_2an = verifica_frequencia(vet_2anpala,vet_2andic)
-    print(vetor_freq)
-    print(vetor_freq_2an)
-    print(vetores_palavras[0])
-    print(vetores_palavras[1])
-    print(vetores_palavras[2])
-    print(vet_2andic)
-    print(vet_2anpala)
+    # redirect('/visualizar')
+
+    if op == "1":
+        return dicionario
+    if op == "2":
+        return vet_2andic
+    if op == "3":
+        return vetor_freq
+    if op == "4":
+        return vetor_freq_2an
