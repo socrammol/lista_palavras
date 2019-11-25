@@ -1,0 +1,16 @@
+<p>&lt;!doctype html&gt;</p>
+<h2>Selecione os dados que deseja</h2>
+<p>{% with messages = get_flashed_messages() %} {% if messages %}</p>
+<ul class="flashes">{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}</ul>
+<p>{% endif %} {% endwith %}</p>
+<form action="/" enctype="multipart/form-data" method="get">
+</form><form>
+<p><label><input type="checkbox" />O vocabulário completo formado pelas palavras isoladas</label></p>
+<p><label><input type="checkbox" />O vocabulário completo formado por grupos de 2 palavras em sequência (2-gram)</label></p>
+<p><label><input type="checkbox" />Os N vetores de palavras de todos os documentos, considerando o vocabulário formado pelas palavras isoladas</label></p>
+<p><label><input type="checkbox" />Os N vetores de palavras de todos os documentos, considerando o vocabulário formado por grupos de 2 palavras em sequência (2-gram)</label></p>
+</form><form action="/" enctype="multipart/form-data" method="get">
+<p><input type="submit" value="Submit" /></p>
+</form>
