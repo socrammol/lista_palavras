@@ -1,25 +1,25 @@
-# lista_palavras
+# lista_palavras_api
 
-### A linguagem utilizada foi python com framework FLASK
 
-### Foi utilizado a biblioteca NLTK para processar linguagem natural
+### Tecnologias
 
-### sera necessario instalar o NLTK e baixar os pacote 
+- Python 3.8
+- Flask
+
+### Pacotes necessarios
+##### NLTK
 - stopwords
 - punctuation
 - ngrams
 - word_tokenize
-### Utilizado o stopwords para retirar letras como e,o,ou virgulas e pontos finais 
 
-### Ja para o FLASK foi utilizado os pacotes
+##### Flask
 - request
 - redirect
 - render_template
 - jinja2
 
-#### Para Rodar local, sera necessario instalar as bibliotecas e pacotes citados acima
-#### apos isto sera necessario rodar o arquivo main.py
-#### Ir ate o ip indicado pelo terminal
-#### selecionar os arquivos que se deseja leitura, e a resposta espeerada
-#### clicar em submit
+#### Funcionalidades
 
+### Carga de dados na aplicação
+Ao abrir o link gerado pelo terminal da aplicação  seleciona e opção de incluir arquivo, selecione os arquivos de texto desejados , apos isso selecione a resposta desejada e click em submit.
